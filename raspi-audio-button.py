@@ -10,6 +10,8 @@ GPIO.setup(23, GPIO.IN)
 GPIO.setup(24, GPIO.IN)
 GPIO.setup(25, GPIO.IN)
 
+url = "https://flushedtolearn.herokuapp.com/media/online_song.mp3"
+
 while True:
 	if (GPIO.input(23) == False):
 		os.system('mpg123 -q HappyClip.mp3 &')
