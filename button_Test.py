@@ -11,7 +11,7 @@ import urllib.request
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(23, GPIO.IN)
 
-url = "https://flushedtolearn.herokuapp.com/media/online_song.mp3"
+url = "https://s3.amazonaws.com/flushedsongsbucket/online_song.mp3"
 urllib.request.urlretrieve(url, "song.mp3")
 pygame.mixer.init()
 i = 0
@@ -20,8 +20,9 @@ while True:
                 urllib.request.urlretrieve(url, "song.mp3")
                 print("playing song", i)
                 os.system('omxplayer song.mp3')
-                #pygame.mixer.music.load("song.mp3")
-                #pygame.mixer.music.play()
+                #os.system('omxplayer song.mp3')
+                pygame.mixer.music.load("song.mp3")
+                pygame.mixer.music.play()
                
         i += 1
         sleep(0.1);
